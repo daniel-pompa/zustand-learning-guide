@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply overflow-x-hidden min-h-screen text-gray-800 selection:bg-gray-700 selection:text-white;
+  }
+
+  /**
+   * Drag and Drop Fix
+   * Prevents body from being a scroll container (fixes @hello-pangea/dnd warning)
+   */
+  body {
+    overflow: hidden;
+  }
+
+  html {
+    height: 100%;
+    overflow: auto;
+  }
+
+  /* Typography */
+  h1 {
+    @apply text-3xl font-bold;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold;
+  }
+
+  h3 {
+    @apply text-xl font-semibold;
+  }
+
+  hr {
+    @apply my-1 border-gray-300 border mb-3;
+  }
+
+  /* Buttons styles */
+  button {
+    @apply text-base text-center font-semibold rounded-md px-3 py-2 border bg-gray-50 hover:bg-gray-100 transition-colors ease-in-out duration-200;
+    @apply outline-none focus:outline-none focus:ring-0 active:bg-transparent;
+  }
+
+  /* Form inputs styles */
+  input:not(.swal2-input)[type='text'],
+  input:not(.swal2-input)[type='password'],
+  input:not(.swal2-input)[type='email'],
+  input:not(.swal2-input)[type='number'],
+  input:not(.swal2-input)[type='date'],
+  input:not(.swal2-input)[type='time'],
+  input:not(.swal2-input)[type='tel'],
+  select {
+    @apply w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500;
+  }
+}
